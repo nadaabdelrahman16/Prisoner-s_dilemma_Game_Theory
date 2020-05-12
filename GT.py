@@ -1,0 +1,4 @@
+class GT:
+
+    pass
+
