@@ -1,4 +1,34 @@
 import numpy as np
+from tkinter import *
+import pandas as pd
+
+def GUI_Payoff_Matrix(payoff_matrix,Player1_actions,Player2_actions):
+    # Use this Function to create payyoff matrix in GUI
+    # Player1_actions : Strategies of Player 1
+    # Player2_actions : Strategies of Player 2
+    n = np.size(payoff_matrix, 1)
+    m = np.size(payoff_matrix, 1)
+
+    main = Tk()
+    main.title("Payoff Matrix")
+    main.iconbitmap('games.ico')
+    for i in range(n+1):
+        for j in range(m+1):
+            e = Entry(relief=RIDGE)
+            e.grid(row=i, column=j, sticky=NSEW)
+            if (i==0)and (j==0):
+                continue
+            elif(i==0):
+                e.insert(END, Player2_actions[j-1])
+                continue
+            elif(j == 0):
+                e.insert(END, Player1_actions[i-1])
+                continue
+            else:
+                e.insert(END, ('(',int(payoff_matrix[i-1][j-1][0]),',',int(payoff_matrix[i-1][j-1][1]),')'))
+    # Run GUI
+    main.mainloop()
+    return None
 
 def show_payoff(payoff_matrix):
     #Use this Function to take actions and print GUI
