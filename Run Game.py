@@ -48,7 +48,7 @@ def show_payoff(payoff_matrix):
 
     # cols = pd.MultiIndex.from_product([lable_one, lable_two])
     # p = pd.DataFrame(payoff_matrix.T.reshape(2, -1), index=row, columns=cols)
-    #GUI_Payoff_Matrix(payoff_matrix,Player1_actions,Player2_actions)
+    GUI_Payoff_Matrix(payoff_matrix,Player1_actions,Player2_actions)
     return None
 
 def Run():
