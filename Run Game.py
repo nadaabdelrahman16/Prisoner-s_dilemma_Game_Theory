@@ -3,10 +3,10 @@ from tkinter import *
 import pandas as pd
 
 def GUI_Payoff_Matrix(payoff_matrix,Player1_actions,Player2_actions):
-    # Use this Function to create payyoff matrix in GUI
+    # Use this Function to create payoff matrix in GUI
     # Player1_actions : Strategies of Player 1
     # Player2_actions : Strategies of Player 2
-    n = np.size(payoff_matrix, 1)
+    n = np.size(payoff_matrix, 0)
     m = np.size(payoff_matrix, 1)
 
     main = Tk()
@@ -34,7 +34,7 @@ def show_payoff(payoff_matrix):
     #Use this Function to take actions and print GUI
     # Player1_actions : Strategies of Player 1
     # Player2_actions : Strategies of Player 2
-    n=np.size(payoff_matrix, 1)
+    n=np.size(payoff_matrix, 0)
     m=np.size(payoff_matrix, 1)
     Player1_actions=np.array([],dtype=str)
     Player2_actions = np.array([],dtype=str)
