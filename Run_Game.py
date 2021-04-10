@@ -1,8 +1,9 @@
 import numpy as np
 from tkinter import *
 import pandas as pd
+class GT():
 
-def GUI_Payoff_Matrix(payoff_matrix,Player1_actions,Player2_actions):
+ def GUI_Payoff_Matrix(self,payoff_matrix,Player1_actions,Player2_actions):
     # Use this Function to create payoff matrix in GUI
     # Player1_actions : Strategies of Player 1
     # Player2_actions : Strategies of Player 2
@@ -30,7 +31,7 @@ def GUI_Payoff_Matrix(payoff_matrix,Player1_actions,Player2_actions):
     main.mainloop()
     return None
 
-def show_payoff(payoff_matrix):
+ def show_payoff(self,payoff_matrix):
     #Use this Function to take actions and print GUI
     # Player1_actions : Strategies of Player 1
     # Player2_actions : Strategies of Player 2
@@ -48,31 +49,31 @@ def show_payoff(payoff_matrix):
 
     # cols = pd.MultiIndex.from_product([lable_one, lable_two])
     # p = pd.DataFrame(payoff_matrix.T.reshape(2, -1), index=row, columns=cols)
-    GUI_Payoff_Matrix(payoff_matrix,Player1_actions,Player2_actions)
-    return None
+    GT.GUI_Payoff_Matrix(self,payoff_matrix,Player1_actions,Player2_actions)
+    return Player1_actions,Player2_actions
 
-def Run():
+
+
+ def Run(self):
 # Used this Function to take inputs and it 's the Main Function
 # n : number of Strategies for Player 1
 # m : number of Strategies for Player 2
 
- n = int(input("Enter the number of Player1's actions : "))
- m = int(input("Enter the number of Player2's actions: "))
+  n = int(input("Enter the number of Player1's actions : "))
+  m = int(input("Enter the number of Player2's actions: "))
 
- print("Enter each profile of payoff in a single line (separated by space): ")
- t = list(tuple(map(int,input().split())) for r in range(n*m))
- payoff=np.asarray([sublist for sublist in t])
+  print("Enter each profile of payoff in a single line (separated by space): ")
+  t = list(tuple(map(int,input().split())) for r in range(n*m))
+  payoff=np.asarray([sublist for sublist in t])
 
 # User input of payoffs matrix
- payoff_matrix=np.zeros((n,m,2))
- counter=0
- for i in range(n):
+  payoff_matrix=np.zeros((n,m,2))
+  counter=0
+  for i in range(n):
        for j in range(m):
            payoff_matrix[i][j]=payoff[counter]
            counter+=1
+  Player1_actions,Player2_actions=GT.show_payoff(self,payoff_matrix)
+  return payoff_matrix,Player1_actions,Player2_actions
 
- show_payoff(payoff_matrix)
- return None
 
-
-Run()
