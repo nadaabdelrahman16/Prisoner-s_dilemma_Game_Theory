@@ -3,6 +3,7 @@
 The prisoner’s dilemma basically provides a framework for understanding how to strike a balance between cooperation and competition and is a useful tool for strategic decision-making.
 
 A prisoner's dilemma describes a situation where, according to game theory, two players acting strategically will ultimately result in a suboptimal choice for both.
+
 Consider a simultaneous game between two players. Player 1 has n actions (i.e., n pure
 strategies), while player 2 has m actions. Thus the payoff matrix representing the game will be of
 size n x m , where n and m are any arbitrary positive numbers. Write a code implementation
